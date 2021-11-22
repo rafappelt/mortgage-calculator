@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/rafappelt/mortgage-calculator/issues"
   },
-  "homepage": "https://github.com/rafappelt/mortgage-calculator#readme",
+  "homepage": "http://appelt.com.br/mortgage",
   "devDependencies": {
     "@babel/cli": "^7.16.0",
     "@babel/core": "^7.16.0",
