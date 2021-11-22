@@ -24,6 +24,13 @@ module.exports = {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
       },
+      {
+        test: /web\/[\s\S]*\/[\s\S]*\.html$$/i,
+        loader: 'html-loader',
+        options: {
+          sources: true,
+        },
+      },
     ],
   },
   plugins: [

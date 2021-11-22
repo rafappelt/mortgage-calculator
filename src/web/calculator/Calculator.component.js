@@ -1,44 +1,9 @@
 import CalculatorPresenter from '../../ui/calculator/Calculator.presenter';
 import Component from '../common/Component';
 import './Calculator.scss';
+import * as html from './Calculator.html';
 
 export default class Calculator extends Component {
-  #html = `
-      <section class="data-input">
-        <h2 class="data-input__header">Change values to calculate your results</h2>
-        <form class="data-input__form">
-          <app-slider id="years-of-mortgage" title="Years of mortgage"></app-slider>
-          <app-slider id="interest-rate" title="Rate of interest (%)"></app-slider>
-          <currency-fieldset id="loan-amount" title="Loan Amount"></currency-fieldset>
-          <currency-fieldset id="annual-tax" title="Annual Tax" half-size="true"></currency-fieldset>
-          <currency-fieldset id="annual-insurance" title="Annual Insurance" half-size="true"></currency-fieldset>
-          <input id="calculate" type="button" class="button" value="Calculate"></input>
-        </form>
-      </section>
-
-      <section class="data-output">
-        <h2 class="data-output__header">Your results</h2>
-        <div class="data-output__table">
-          <div id="principal-and-interest" class="data-output__item">
-            <label class="data-output__label">Principal & Interest</label>
-            <span class="data-output__value"></span>
-          </div>
-          <div id="tax" class="data-output__item">
-            <label class="data-output__label">Tax</label>
-            <span class="data-output__value"></span>
-          </div>
-          <div id="insurance" class="data-output__item">
-            <label class="data-output__label">Insurance</label>
-            <span class="data-output__value"></span>
-          </div>
-          <div id="monthly-payment" class="data-output__item">
-            <label class="data-output__label">Total Monthly Payment</label>
-            <span class="data-output__value"></span>
-          </div>
-        </div>
-      </section>
-  `;
-
   #presenter;
 
   constructor() {
@@ -51,7 +16,7 @@ export default class Calculator extends Component {
   }
 
   connectedCallback() {
-    this.innerHTML = this.#html;
+    this.innerHTML = html;
     this._attachInputBinders();
     this._attachButtonClickListener();
     this.#presenter.subscribe(this._applyPresenterState.bind(this));
