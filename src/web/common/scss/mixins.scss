@@ -1,0 +1,42 @@
+@mixin mobile($attrs, $val) {
+  @media screen and (max-width: $md-breakpoint-max) {
+    @each $attr in $attrs {
+      #{$attr}: #{$val};
+    }
+  }
+}
+@mixin md($attrs, $val) {
+  @media screen and (min-width: $md-breakpoint) {
+    @each $attr in $attrs {
+      #{$attr}: #{$val};
+    }
+  }
+}
+
+@mixin responsive($attr, $mobile-val, $md-val: false) {
+  @include mobile($attr, #{$mobile-val});
+
+  @if $md-val == false {
+    @include md($attr, #{$mobile-val});
+  } @else {
+    @include md($attr, #{$md-val});
+  }
+}
+
+@mixin px-mobile($attr, $px) {
+  @include mobile($attr, calc(1rem * #{$px} / (#{$mobile} * 0.01)));
+}
+
+@mixin px-md($attr, $px) {
+  @include md($attr, calc(1rem * #{$px} / (#{$md} * 0.01)));
+}
+
+@mixin px($attr, $mobile-px, $md-px: false) {
+  @include px-mobile($attr, $mobile-px);
+
+  @if $md-px == false {
+    @include px-md($attr, ($mobile-px / $mobile) * $md);
+  } @else {
+    @include px-md($attr, $md-px);
+  }
+}

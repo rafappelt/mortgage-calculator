@@ -1,0 +1,14 @@
+@import '../common/scss/variables.scss';
+@import '../common/scss/mixins.scss';
+
+.number-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__input {
+    padding: 0;
+    width: 100%;
+    text-align: center;
+  }
+}

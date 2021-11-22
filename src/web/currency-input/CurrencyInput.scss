@@ -1,0 +1,15 @@
+@import '../common/scss/variables.scss';
+@import '../common/scss/mixins.scss';
+
+.currency-input {
+  display: flex;
+  flex-direction: column;
+
+  &__input {
+    margin: 0;
+    width: 100%;
+  }
+  &--error &__input {
+    border-color: red;
+  }
+}

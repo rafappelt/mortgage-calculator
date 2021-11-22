@@ -1,0 +1,117 @@
+@import '../common/scss/variables.scss';
+@import '../common/scss/mixins.scss';
+
+.app-calculator {
+  @include px(margin-top, 24, 48);
+  @include px(margin-left margin-right, 17.5, 150);
+  display: flex;
+  @include responsive(flex-direction, column, row);
+}
+
+.data-input {
+  @include mobile(width, 100%);
+  @include px-md(width, 677);
+  flex: 1;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.09);
+  z-index: 2;
+
+  &__header {
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    @include px(font-size, 12.9, 14.5);
+    letter-spacing: 0.023em;
+    @include px(padding, 16, 24);
+    @include px(padding-left, 16, 0);
+    margin: 0;
+    @include px(margin-left margin-right, 0, 24);
+    border: 0 solid #dddddd;
+    border-bottom-width: 1px;
+  }
+  &__form {
+    display: flex;
+    flex-flow: row wrap;
+    @include px(padding, 16, 24);
+  }
+}
+
+.button {
+  width: 100%;
+  cursor: pointer;
+  background: #316eef;
+  border-radius: 8px;
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 600;
+  @include px(font-size, 18, 20);
+  @include px(height, 48, 56);
+  @include px(margin-top, 0, 12);
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  border: 0;
+}
+
+.data-output {
+  width: auto;
+  @include px-mobile(width, 328);
+  height: auto;
+  flex: 1;
+  background-color: #fbfbfb;
+  margin: auto;
+
+  @include px(padding-top, 24, 56);
+  @include px(padding-bottom, 54, 47);
+  @include px(padding-left padding-right, 14, 32);
+
+  &__header {
+    @include px(font-size, 25, 25);
+  }
+
+  &__table {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    display: flex;
+    @include responsive(flex-direction, row, column);
+    @include responsive(justify-content, space-between, flex-start);
+    border: 0 solid #dddddd;
+    @include mobile(border-bottom-width, 1px);
+    @include px(padding-top, 25, 24);
+    @include px(padding-bottom, 12, 16);
+
+    &:last-of-type {
+      @include md(border-top-width, 1px);
+      .result__label {
+        @include md(font-family, Graphik);
+        @include px-md(font-size, 20);
+      }
+    }
+  }
+
+  &__label {
+    font-family: 'Helvetica Neue';
+    font-weight: 400;
+    @include px(font-size, 12.9, 16.1);
+    line-height: 150%;
+    @include px-md(line-height, 28);
+    letter-spacing: 0.023em;
+    color: #5d5d5d;
+    border: 0 solid #dddddd;
+  }
+
+  &__value {
+    @include px(font-size, 16, 25);
+    @include responsive(line-height, 125%, 150%);
+  }
+
+  &--hidden {
+    @include responsive(display, none, relative);
+  }
+
+  &--hidden &__value {
+    color: #bbbcbc;
+  }
+}

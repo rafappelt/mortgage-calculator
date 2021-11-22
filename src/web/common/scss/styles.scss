@@ -1,0 +1,46 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+@import 'fonts.scss';
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 1vw;
+  font-family: Graphik;
+
+  * {
+    font-family: Graphik;
+    box-sizing: border-box;
+  }
+}
+
+input {
+  display: flex;
+  background: #ddd6d6;
+  @include px(font-size, 16, 16);
+  @include px(height, 48, 48);
+  @include px(padding-left, 24, 24);
+  border: 1px solid #bbbcbc;
+  border-radius: 8px;
+  padding: 0;
+  margin: 0;
+}
+
+input:focus {
+  outline: 1px solid #1f58d2;
+  box-shadow: none;
+}
+
+h1 {
+  font-family: 'Publico';
+  font-style: normal;
+  margin: 0;
+  @include px(font-size, 20, 31.25);
+  @include px(padding-left, 23, 150);
+  @include px(padding-top, 16, 12.5);
+  @include px(padding-bottom, 15, 12.5);
+  letter-spacing: -0.013em;
+  line-height: 125%;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.09);
+}
