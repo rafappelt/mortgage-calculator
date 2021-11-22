@@ -16,7 +16,7 @@ export default class Calculator extends Component {
   }
 
   connectedCallback() {
-    this.innerHTML = html;
+    this.innerHTML = html.default;
     this._attachInputBinders();
     this._attachButtonClickListener();
     this.#presenter.subscribe(this._applyPresenterState.bind(this));
