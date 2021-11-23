@@ -103,28 +103,64 @@ export default class Calculator extends Component {
     this.querySelector('.data-output').classList.remove('data-output--hidden');
   }
 
+  get yearsOfMortgage() {
+    return this.querySelector('#years-of-mortgage');
+  }
+
+  get interestRate() {
+    return this.querySelector('#interest-rate');
+  }
+
+  get loanAmount() {
+    return this.querySelector('#loan-amount');
+  }
+
+  get annualTax() {
+    return this.querySelector('#annual-tax');
+  }
+
+  get annualInsurance() {
+    return this.querySelector('#annual-insurance');
+  }
+
+  get principalAndInterest() {
+    return this.querySelector('#principal-and-interest');
+  }
+
+  get tax() {
+    return this.querySelector('#tax');
+  }
+
+  get insurance() {
+    return this.querySelector('#insurance');
+  }
+
+  get monthlyPayment() {
+    return this.querySelector('#monthly-payment');
+  }
+
   _applyPresenterState(state) {
-    this.querySelector('#years-of-mortgage').setAttribute('value', state.yearsOfMortgage);
-    this.querySelector('#years-of-mortgage').setAttribute('error', state.yearsOfMortgageError);
-    this.querySelector('#years-of-mortgage').setAttribute('min', state.yearsOfMortgageMin);
-    this.querySelector('#years-of-mortgage').setAttribute('max', state.yearsOfMortgageMax);
-    this.querySelector('#years-of-mortgage').setAttribute('step', state.yearsOfMortgageStep);
-    this.querySelector('#interest-rate').setAttribute('value', state.interestRate);
-    this.querySelector('#interest-rate').setAttribute('error', state.interestRateError);
-    this.querySelector('#interest-rate').setAttribute('min', state.interestRateMin);
-    this.querySelector('#interest-rate').setAttribute('max', state.interestRateMax);
-    this.querySelector('#interest-rate').setAttribute('step', state.interestRateStep);
-    this.querySelector('#loan-amount').setAttribute('value', state.loanAmount);
-    this.querySelector('#loan-amount').setAttribute('error', state.loanAmountError);
-    this.querySelector('#annual-tax').setAttribute('value', state.annualTax);
-    this.querySelector('#annual-tax').setAttribute('error', state.annualTaxError);
-    this.querySelector('#annual-insurance').setAttribute('value', state.annualInsurance);
-    this.querySelector('#annual-insurance').setAttribute('error', state.annualInsuranceError);
-    this.querySelector('#principal-and-interest .data-output__value').innerText =
+    this.yearsOfMortgage.setAttribute('value', state.yearsOfMortgage);
+    this.yearsOfMortgage.setAttribute('error', state.yearsOfMortgageError);
+    this.yearsOfMortgage.setAttribute('min', state.yearsOfMortgageMin);
+    this.yearsOfMortgage.setAttribute('max', state.yearsOfMortgageMax);
+    this.yearsOfMortgage.setAttribute('step', state.yearsOfMortgageStep);
+    this.interestRate.setAttribute('value', state.interestRate);
+    this.interestRate.setAttribute('error', state.interestRateError);
+    this.interestRate.setAttribute('min', state.interestRateMin);
+    this.interestRate.setAttribute('max', state.interestRateMax);
+    this.interestRate.setAttribute('step', state.interestRateStep);
+    this.loanAmount.setAttribute('value', state.loanAmount);
+    this.loanAmount.setAttribute('error', state.loanAmountError);
+    this.annualTax.setAttribute('value', state.annualTax);
+    this.annualTax.setAttribute('error', state.annualTaxError);
+    this.annualInsurance.setAttribute('value', state.annualInsurance);
+    this.annualInsurance.setAttribute('error', state.annualInsuranceError);
+    this.principalAndInterest.querySelector('.data-output__value').innerText =
       state.principalAndInterest;
-    this.querySelector('#tax .data-output__value').innerText = state.tax;
-    this.querySelector('#insurance .data-output__value').innerText = state.insurance;
-    this.querySelector('#monthly-payment .data-output__value').innerText = state.monthlyPayment;
+    this.tax.querySelector('.data-output__value').innerText = state.tax;
+    this.insurance.querySelector('.data-output__value').innerText = state.insurance;
+    this.monthlyPayment.querySelector('.data-output__value').innerText = state.monthlyPayment;
     this._handleDisplayResultsState(state.displayResult);
   }
 }
