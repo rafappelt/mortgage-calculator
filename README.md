@@ -1,6 +1,6 @@
 # Mortgage Calculator
 
-This project was created by Rafael Appelt as a practical test for ConsumerAffairs.
+This project was created by Rafael Appelt as a practical test.
 
 # Architecture
 
